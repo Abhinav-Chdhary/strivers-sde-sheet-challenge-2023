@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
 
-void setZeroes(vector<vector<int> > &matrix) {
+using namespace std;
+//little tricky, do a dry run and observe
+void setZeroes(vector<vector<int>> &matrix) {
     int col0 = 1, rows = matrix.size(), cols = matrix[0].size();
 
     for (int i = 0; i < rows; i++) {
@@ -17,4 +19,26 @@ void setZeroes(vector<vector<int> > &matrix) {
                 matrix[i][j] = 0;
         if (col0 == 0) matrix[i][0] = 0;
     }
+}
+int main() {
+    // Example usage
+    vector<vector<int>> matrix = {
+        {1, 1, 1},
+        {1, 0, 1},
+        {1, 1, 1}
+    };
+
+    // Set zeroes in the matrix
+    setZeroes(matrix);
+
+    // Print the modified matrix
+    cout << "Modified Matrix:" << endl;
+    for (int i = 0; i < matrix.size(); i++) {
+        for (int j = 0; j < matrix[i].size(); j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
