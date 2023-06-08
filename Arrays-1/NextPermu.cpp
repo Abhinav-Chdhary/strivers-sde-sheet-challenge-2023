@@ -1,6 +1,7 @@
 #include <iostream> 
 #include <algorithm>
 #include <vector>
+using namespace std;
 
 vector<int> nextPermutation(vector<int> &per, int n)
 {
@@ -27,4 +28,22 @@ vector<int> nextPermutation(vector<int> &per, int n)
     //reverse the rest of the portion
     reverse(per.begin()+ind+1, per.end());
     return per;
+}
+
+int main() {
+    // Example usage
+    vector<int> permutation = {1, 2, 3};
+    int size = permutation.size();
+
+    // Compute the next permutation
+    vector<int> nextPerm = nextPermutation(permutation, size);
+
+    // Print the result
+    cout << "Next permutation: ";
+    for (int i = 0; i < size; i++) {
+        cout << nextPerm[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
