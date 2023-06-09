@@ -2,13 +2,14 @@
 void breadthFirstSearch(int ind, vector<int> &vis, vector<int> &temp, vector<int> adjList[]){
     queue<int> q;
     q.push(ind);
+    vis[ind] = 1;
     while(!q.empty()){
         int curr = q.front();
         temp.push_back(curr);
-        vis[curr] = 1;
         q.pop();
         for(auto it: adjList[curr]){
             if(!vis[it]){
+                vis[it] = 1;
                 q.push(it);
             }
         }
