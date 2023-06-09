@@ -10,3 +10,14 @@ Node *reverseLinkedList(Node *head)
     }
     return prev;
 }
+//recursive
+Node *reverseLinkedList(Node *head) 
+{
+    if(!head||!head->next)
+        return head;
+
+    Node *curr = reverseLinkedList(head->next);
+    head->next->next = head;
+    head->next = NULL;
+    return curr;
+}
