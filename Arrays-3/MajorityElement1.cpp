@@ -1,5 +1,5 @@
 
-
+//Moore's Voting algo
     int majorityElement(vector<int>& nums) {
         int candidate = nums[0];
         int count = 1;
