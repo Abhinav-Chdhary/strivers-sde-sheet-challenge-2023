@@ -1,5 +1,5 @@
 //Recursive dp solution
-int sequencer(vector<int> &val, vector<int> &wei, int ind, int bag, vector<vector<int>> dp){
+int sequencer(vector<int> &val, vector<int> &wei, int ind, int bag, vector<vector<int>> &dp){
 	if(ind == 0){
         if(wei[0] <=bag) return val[0];
         else return 0;
