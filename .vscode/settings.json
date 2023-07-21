@@ -2,6 +2,7 @@
     "files.associations": {
         "vector": "cpp",
         "utility": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "algorithm": "cpp"
     }
 }
