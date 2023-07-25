@@ -1,5 +1,10 @@
-// Brute O(nlogn)
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <unordered_set>
+using namespace std;
 
+// Brute force O(nlogn)
 int lengthOfLongestConsecutiveSequence(vector<int> &arr, int n)
 {
     sort(arr.begin(), arr.end());
@@ -20,6 +25,7 @@ int lengthOfLongestConsecutiveSequence(vector<int> &arr, int n)
     }
     return mxnt;
 }
+
 // Optimal O(n)
 int longestConsecutive(vector<int> &nums)
 {
@@ -47,4 +53,20 @@ int longestConsecutive(vector<int> &nums)
         mxnt = max(cnt, mxnt);
     }
     return mxnt;
+}
+
+int main()
+{
+    vector<int> nums1 = {100, 4, 200, 1, 3, 2}; // Example input for 'longestConsecutive'
+    vector<int> nums2 = {100, 4, 200, 1, 3, 2}; // Example input for 'lengthOfLongestConsecutiveSequence'
+
+    // Using Optimal O(n) function
+    int maxLengthOptimal = longestConsecutive(nums1);
+    cout << "Using Optimal O(n) function, Length of longest consecutive sequence: " << maxLengthOptimal << endl;
+
+    // Using Brute force O(nlogn) function
+    int maxLengthBruteForce = lengthOfLongestConsecutiveSequence(nums2, nums2.size());
+    cout << "Using Brute force O(nlogn) function, Length of longest consecutive sequence: " << maxLengthBruteForce << endl;
+
+    return 0;
 }
