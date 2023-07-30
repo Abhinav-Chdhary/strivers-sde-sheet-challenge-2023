@@ -1,8 +1,11 @@
 {
-    "files.associations": {
-        "vector": "cpp",
-        "utility": "cpp",
-        "xlocale": "cpp",
-        "algorithm": "cpp"
-    }
+  "files.associations": {
+    "*.ejs": "html",
+    "vector": "cpp",
+    "utility": "cpp",
+    "xlocale": "cpp",
+    "algorithm": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
+  }
 }
