@@ -1,4 +1,23 @@
-// This did not work but I spent a lot of time making it work so..
+#include <iostream>
+#include <stack>
+using namespace std;
+
+template <typename T>
+class BinaryTreeNode
+{
+public:
+    T data;
+    BinaryTreeNode *left;
+    BinaryTreeNode *right;
+    BinaryTreeNode(T data)
+    {
+        this->data = data;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+// Approach 1: Previous approach (did not work)
 void inorderLeft(BinaryTreeNode<int> *root, stack<int> &stk)
 {
     if (!root)
@@ -7,6 +26,7 @@ void inorderLeft(BinaryTreeNode<int> *root, stack<int> &stk)
     stk.push(root->data);
     inorderLeft(root->left, stk);
 }
+
 void inorderRight(BinaryTreeNode<int> *root, stack<int> &stk)
 {
     if (!root)
@@ -15,12 +35,13 @@ void inorderRight(BinaryTreeNode<int> *root, stack<int> &stk)
     stk.push(root->data);
     inorderRight(root->right, stk);
 }
+
 bool pairSumBst(BinaryTreeNode<int> *root, int k)
 {
     stack<int> stk1, stk2;
-    // for left ppl
+    // for left subtree
     inorderLeft(root->left, stk1);
-    // for right ppl
+    // for right subtree
     stk2.push(root->data);
     inorderRight(root->right, stk2);
     //
@@ -36,7 +57,8 @@ bool pairSumBst(BinaryTreeNode<int> *root, int k)
     }
     return false;
 }
-// Optimal solution
+
+// Approach 2: Optimal solution using BSTIterator
 class BSTIterator
 {
     stack<BinaryTreeNode<int> *> stk;
@@ -76,6 +98,7 @@ private:
         }
     }
 };
+
 bool pairSumBst(BinaryTreeNode<int> *root, int k)
 {
     if (!root)
@@ -95,4 +118,36 @@ bool pairSumBst(BinaryTreeNode<int> *root, int k)
             j = r.next();
     }
     return false;
+}
+
+// Helper function to create a sample binary tree
+BinaryTreeNode<int> *createSampleTree()
+{
+    BinaryTreeNode<int> *root = new BinaryTreeNode<int>(15);
+    root->left = new BinaryTreeNode<int>(10);
+    root->right = new BinaryTreeNode<int>(20);
+    root->left->left = new BinaryTreeNode<int>(5);
+    root->left->right = new BinaryTreeNode<int>(12);
+    root->right->left = new BinaryTreeNode<int>(17);
+    root->right->right = new BinaryTreeNode<int>(25);
+    return root;
+}
+
+int main()
+{
+    BinaryTreeNode<int> *root = createSampleTree();
+
+    // Testing Approach 1
+    cout << "Using Approach 1:\n";
+    int k1 = 27;
+    bool result1 = pairSumBst(root, k1);
+    cout << "Pair with sum " << k1 << " is " << (result1 ? "found" : "not found") << endl;
+
+    // Testing Approach 2
+    cout << "\nUsing Approach 2:\n";
+    int k2 = 37;
+    bool result2 = pairSumBst(root, k2);
+    cout << "Pair with sum " << k2 << " is " << (result2 ? "found" : "not found") << endl;
+
+    return 0;
 }
