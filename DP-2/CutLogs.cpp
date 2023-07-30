@@ -1,5 +1,8 @@
-// Binary Search dp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
 // Recursive function to find the minimum number of cuts needed to cut logs of length 'n' into 'k' parts.
 int rec(int n, int k, vector<vector<int>> &dp)
 {
@@ -58,4 +61,27 @@ int cutLogs(int k, int n)
 
     // Call the recursive function to find the minimum number of cuts
     return rec(n, k, dp);
+}
+
+int main()
+{
+    // Test case 1
+    int logsLength1 = 10;
+    int numberOfParts1 = 3;
+    int result1 = cutLogs(numberOfParts1, logsLength1);
+    cout << "Minimum number of cuts needed for logs of length " << logsLength1 << " into " << numberOfParts1 << " parts: " << result1 << endl;
+
+    // Test case 2
+    int logsLength2 = 8;
+    int numberOfParts2 = 4;
+    int result2 = cutLogs(numberOfParts2, logsLength2);
+    cout << "Minimum number of cuts needed for logs of length " << logsLength2 << " into " << numberOfParts2 << " parts: " << result2 << endl;
+
+    // Test case 3
+    int logsLength3 = 15;
+    int numberOfParts3 = 2;
+    int result3 = cutLogs(numberOfParts3, logsLength3);
+    cout << "Minimum number of cuts needed for logs of length " << logsLength3 << " into " << numberOfParts3 << " parts: " << result3 << endl;
+
+    return 0;
 }
