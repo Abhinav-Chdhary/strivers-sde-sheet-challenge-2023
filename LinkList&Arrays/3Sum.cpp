@@ -25,7 +25,7 @@ vector<vector<int>> threeSum(vector<int> &nums)
     vector<vector<int>> resres(res.begin(), res.end());
     return resres;
 }
-//Using hashset got TLE again O(n^2)
+//Using hashset got TLE again O((n^2)*logn)
 vector<vector<int>> threeSum(vector<int>& nums) {
         sort(nums.begin(), nums.end());
         set<vector<int>> res;
