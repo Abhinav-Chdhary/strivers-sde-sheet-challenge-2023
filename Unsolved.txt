@@ -1,0 +1,10 @@
+Maths:
+https://leetcode.com/problems/ugly-number/description/
+BT:
+https://leetcode.com/problems/unique-binary-search-trees-ii/description/
+Array:
+https://leetcode.com/problems/minimum-seconds-to-equalize-a-circular-array/description/
+BS:
+https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/submissions/
+https://leetcode.com/problems/search-in-rotated-sorted-array-ii/solutions/
+https://leetcode.com/problems/sliding-window-maximum/submissions/
